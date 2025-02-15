@@ -1,0 +1,113 @@
+nav {
+    background-image: linear-gradient(45deg, #003366, #001a33);
+}
+.nav-link {
+    color: white; 
+}
+.navbar-toggler {
+    border: none;
+    font-size: 1.25rem;
+}
+
+.navbar-toggler:focus,
+.btn-close:focus {
+    box-shadow: none;
+    outline: none;
+}
+
+.nav-link {
+    color: #ffffff;
+    font-weight: 500;
+    position: relative;
+}
+
+.nav-link:hover {
+    color: rgb(255, 255, 255);
+}
+
+section {
+    padding-block: 5rem;
+}
+
+.title-config {
+    font-size: 3rem;
+    margin-top: 40px;
+    text-transform: uppercase;
+    font-weight: 500;
+    color: black;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 1rem;
+    text-transform: uppercase;
+    line-height: 1;
+    border-bottom: 3px solid #484848;
+    width: 49%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.menu-image img {
+    height: 450px;
+    width: 450px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 2px solid black;
+}
+
+.about-image img {
+    max-width: 50%;
+    height: auto;
+    border-radius: 3%;
+    border: solid black;
+}
+
+.diagonal {
+    position: relative;
+    isolation: isolate;
+
+}
+
+.diagonal::after {
+    content: '';
+    background-image: linear-gradient(45deg, #4682b4, #000);
+    /* linear-gradient(45deg, #12c2e9, #c471ed, #f64f59); */
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    transform: skewY(-5deg);
+}
+
+.wavy {
+    background-image: linear-gradient(to right, #4682b4, #000);
+    /* creado con https://css-generators.com/wavy-shapes/ */
+    --mask:
+        radial-gradient(50.39px at 50% 68.75px, #000 99%, #0000 101%) calc(50% - 50px) 0/100px 51% repeat-x,
+        radial-gradient(50.39px at 50% -43.75px, #0000 99%, #000 101%) 50% 25px/100px calc(51% - 25px) repeat-x,
+        radial-gradient(50.39px at 50% calc(100% - 68.75px), #000 99%, #0000 101%) calc(50% - 50px) 100%/100px 51% repeat-x,
+        radial-gradient(50.39px at 50% calc(100% + 43.75px), #0000 99%, #000 101%) 50% calc(100% - 25px)/100px calc(51% - 25px) repeat-x;
+    -webkit-mask: var(--mask);
+    mask: var(--mask);
+
+}
+
+@media(min-width: 1000px) {
+    .nav-link::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0%;
+        height: 2px;
+        background-color: white;
+        visibility: hidden;
+        transition: 0.15s ease-in-out;
+    }
+
+    .nav-link:hover::before {
+        width: 100%;
+        visibility: visible;
+    }
+}
